@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'SHIFT SMCE User Guide'
+project = 'BioScape SMCE User Guide'
 copyright = '2023, Evan Lang'
 author = 'Evan Lang'
 
