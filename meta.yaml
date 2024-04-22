@@ -1,0 +1,35 @@
+{% set name = "bioscape-smce-user-guide" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: "{{ BioScape SMCE User Guide|bioscape-smce-user-guide}}"
+  version: "{{ 0.01 }}"
+
+source:
+  git_url: https://github.com/EvanDLang/BioSCape-SMCE-User-Guide
+
+build:
+  number: 0
+  script: "$PYTHON -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - bioscape-smce-user-guide
+
+about:
+  home: https://bioscape-smce-user-guide.readthedocs.io/en/latest/
+  license: apache 2.0
+  license_family: apache
+  license_file: LICENSE
+  summary: Documentation for the BioScape SMCE
+
+extra:
+  recipe-maintainers:
+    - EvanDLang
