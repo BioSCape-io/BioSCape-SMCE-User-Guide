@@ -9,5 +9,6 @@ The BioScape data can be found in the bioscape-data s3 bucket
     
    ../notebooks/data_access
    ../notebooks/s3_user_storage_access
+   ../notebooks/dask_gateway
 
    

@@ -35,7 +35,7 @@ S3 buckets
 
     * bioscape-data
 
-            This is where the BioSCape data lives. It is read-only
+            This is where the BioSCape data lives. This bucket is read only.
 
     * bioscape-smce-user-bucket
 

@@ -2,14 +2,16 @@
 Introduction
 ============
 
-Logging In
-==========
+Logging In For the First Time
+=============================
 
 1.  Navigate to https://cloud.bioscape.io
 
 2.  Enter your username and temporary password. If this is your first time logging in, you should be prompted to change your password.
 
 3.  If that is successful, you should see a screen like this:
+
+.. image:: ../images/bioscape_startup.jpg
 
 4.  Select the smallest server you need to conduct your work. If in doubt, use the “Small” server; only switch to larger servers if they are necessary. (Larger servers cost more money to run. None of these are that expensive, and they are there for you to use! But be responsible — we don’t want to spend money unnecessarily). When ready, click “Start”. You will see a “Your server is starting up…” page with some status messages. This may take 2-3 minutes to complete, and may include some warnings — please be patient.
 
@@ -24,9 +26,11 @@ If you close all the browser tabs running the JupyterLab interface, it will turn
 
 **It is strongly recommended that, when you are done with JupyterLab, you should shut down the server. To immediately shut down the server:**
 
-    * In the top-right of the Jupyter interface, go to “File → Hub Control Panel”. This will open a new tab.
+    * In the top-right of the Jupyter interface, go to “File → Home” or click on the small Nebari logo next to file.
 
-    * Click the red “Stop my server” button. After a few seconds, you should see the button disappear.
+    .. image:: ../images/bioscape_shutdown.jpg
+    
+    * Click the “Stop my server” button. After a few seconds, you should see the button disappear.
 
     * If you need to restart the server, hit the “Start my server” button. That will bring up the “Server options” menu described above.
 
@@ -36,10 +40,12 @@ Shutting down an individual JupyterLab server is distinct from logging out of th
 
 To log out of the JupyterHub interface, go to “File → Log out”.
 
+
+
 Overview of the JuypterLab Interface
 ====================================
 
-.. image:: ../images/juypter_inteface.jpg
+.. image:: ../images/bioscape_jlab_home.jpg
 
 For a detailed breakdown of the JupyterLab interface, see the JupyterLab documentation. A few highlights:
 
@@ -56,10 +62,6 @@ For a detailed breakdown of the JupyterLab interface, see the JupyterLab documen
     * To open this window, click the blue “+” in the top left corner.
 
 #. Open a terminal window. This is often useful for more advanced file system manipulation tasks that are not possible with the default Jupyter file browser (e.g., anything to do with hidden files).
-
-#. Create a plain text file. By default, this will have a `.txt` extension; however, files can be renamed to have any extension you want, and the JupyterLab text editor should support many formats and programming languages natively for indentation, syntax highlighting, etc. The “create text file and then rename it” is an annoying workaround, but is the main way I’ve figured out for creating and modifying arbitrary text files in this interface.
-
-#. S3 bucket browser. This is not a standard part of the JupyterLab interface. This replaces the file browser with an S3 bucket browser, which looks similar and has similar functionality (can also create files, folders, etc.). When navigating in the file/S3 browser, pay attention to whether you are browsing S3 storage or the file system.
 
 #. List of running kernels. Basically, each Jupyter notebook has its own dedicated process, running a specific version of Python (“kernel”). You can see all currently running kernels here, and turn them off if they are hanging, hogging memory, etc.
 

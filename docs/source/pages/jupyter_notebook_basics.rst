@@ -12,8 +12,7 @@ Jupyter notebooks provide a literate interactive programming environment where y
 Kernels
 =======
 
-Jupyter notebooks work by running a specific kernel corresponding to a specific running process of a particular programming language. In SHIFT, by default, we have a Python kernel linked to the default conda environment. This kernel already has many of the Python libraries you will need to do data analysis, and we can expand this base environment to accommodate reasonable user requests.
-
+Jupyter notebooks work by running a specific kernel corresponding to a specific running process of a particular programming language. 
 
 In addition, you can create your own kernels which with new conda environments with specific Python packages.
 
@@ -21,81 +20,62 @@ You can change the kernel of any notebook by clicking the kernel name (default: 
 
 Setting Up a New Kernel
 -----------------------
-The process for setting up a kernel starts with configuring a new virtual environment.
+The BioSCape uses Conda Store to manage virutal environments. The Conda Store has dedicated storage for Conda environments. **The dedicated storage is not unlimited so please try not to create duplicate environments.** It is highly recommended to use the Conda Store to create
+all virtual environments. If you use the command line the conda environment will be stored in your home directory which has limited space. Once the environment is created
+packages can be install via conda install or pip, however these pacakges will not be tracked in by the Conda Store. Only install via the command line as a last resort.
 
 .. _venv:
 
 Creating a New Conda Environment
 --------------------------------
-* Open a new terminal
-* Deactivate the current Conda environment
 
-::
+* Navigate to the Conda-Store tab or Services -> Environment Management
 
-    conda deactivate
+.. image:: ../images/conda_store/conda_store_startup.jpg
 
-* Create a new environment (**Note Conda environments take up a couple of gbs of memory. Creating too many can fill up you home directory storage**)
+* Log in to the Conda-Store using your BioSCape SMCE username and password.
 
-::
+* Select new environment
 
-    #Create a Conda environment from the base environment
-    conda create -n <your-env-name>
+    * If you would like to create an environment for your use only create the environment in your personal namespace. If you would like others
+    to have access to the environment select the users namespace.
 
-    #Create a Conda environment from an existing environment
-    conda create --name <your-env-name> --clone <name-of-existing-environment>
+.. image:: ../images/conda_store/conda_store_new_env.jpg
+
+* Provide a name and a description of your environment and start adding packages clicking add package and searching
     
-    # Create a Conda environment in a specific location
-    conda create -p /path/to/directory
-
-    #Create a clean Conda environment
-    conda create --name <your-env-name> python --no-default-package
-
-    #Create a Conda environment with a specific version of python
-    conda create --name <your-env-name> python=3.9 ipython
-
-* Activate your new environment and install ipykernel and other packages
-
-::
-
-    conda activate <your-env-name>
-    pip install ipykernel
-
-* Adding the new kernel
-
-**Note:** Make sure your new Conda environment is active
-
-::
-
-    python -m ipykernel install --user --name=<kernel-name>
-
-
-* Delete an environment
-
-::
+    * The defualt Python version is 3.12. If you would require a specific version add Python as a package and select the version you would like
     
-    # Delete by name
-    conda remove -n <env-name> --all
+    * If you have a prefered version of the package use the interface to select the appropriate version
     
-    # Delete by path
-    conda remove -p /path/to/directory --all
+    * If you perfer to not use the gui or have yaml file from an existing environment you can click the GUI/YAML slider to switch over 
 
-Kernel Management
------------------
+.. image:: ../images/conda_store/conda_store_add_package.jpg
 
-::
+Editing and Deleting a Conda Environment
+----------------------------------------
 
-    #List existing kernels
-    jupyter kernelspec list
+* Select the environment you would like to edit
 
-    #Remove a Kernel
-    jupyter kernelspec uninstall <kernel-name>
+* Click edit in the top right corner
+
+* If you would like to delete the environment, select delete environment in the bottom right
+
+* Once you are finished save your changes and the environment will start to build
+
+* **Changes can to an environment can take miniute or two to propogate to a notebook**
+
+Rolling back a Conda Environment
+--------------------------------
+If you accidently install a package that breaks your environment Conda-Store has an easy to use
+role back feature.
 
 
-More information can be found in the `Conda`_  and `Jupyter Lab`_ documentation!
+* Select edit and use the builds drop down menu to select a previous build
 
-    .. _Conda: https://conda.io/projects/conda/en/latest/index.html
-    .. _Jupyter Lab: https://jupyterlab.readthedocs.io/en/stable/index.html
+* Save the environment
 
+.. image:: ../images/conda_store/conda_store_rollback.jpg
 
 
 
