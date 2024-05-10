@@ -6,7 +6,7 @@ package:
   version: "{{ 0.01 }}"
 
 source:
-  git_url: https://github.com/EvanDLang/BioSCape-SMCE-User-Guide
+  git_url: https://github.com/BioSCape-io/BioSCape-SMCE-User-Guide
 
 build:
   number: 0
