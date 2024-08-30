@@ -1,5 +1,5 @@
 {% set name = "bioscape-smce-user-guide" %}
-{% set version = "0.0.4" %}
+{% set version = "2.0.3" %}
 
 package:
   name: "{{ BioScape SMCE User Guide|bioscape-smce-user-guide}}"
